@@ -1,21 +1,15 @@
-var http = require('http');
-var express = require('express');
-var app = express();
-const Port = process.env.PORT || 3000
+const http = require('http');
 
+const express = require('express');
 
+const app = express();
 
+const Port = process.env.PORT || 3000;
 
 http.createServer();
 
-app.get('/', function(req, res){
-    res.send('sup')
-})
-
-
-
-
+app.get('/', (req, res) => res.send('yep this server is working dude'));
 
 app.listen(Port);
 
-console.log("server is listening to" + " " + Port);
+console.log(`server is listening to ${Port}`);
