@@ -17,7 +17,7 @@
 > Search recipes made with your favorite ingredients. Learn new and interesting recipes for your favorite ingredients. 
  
  
-## Quote from You ## 
+## From Keys to the Heart ## 
 > "I was always told the key to someone's heart is thru their stomachs. We're giving you access to thousands of keys." 
  
  
