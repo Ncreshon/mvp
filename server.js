@@ -8,7 +8,7 @@ const db = require('./db.js');
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const Port = process.env.PORT || 3000;
 
 http.createServer();
 
@@ -16,6 +16,6 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
 app.get('/signup', (req, res) => res.send('this works too'));
 
-app.listen(PORT);
+app.listen(Port);
 
-console.log(`server is listening to ${PORT}`);
+console.log(`server is listening to ${Port}`);
