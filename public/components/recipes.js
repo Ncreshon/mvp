@@ -1,6 +1,6 @@
-angular.module("mvpApp").component("signup", {
-  templateUrl: "signup.html",
+angular.module("mvpApp").component("reciepes", {
+  templateUrl: "./templates/reciepe.html",
   bindings: {
-    name: "="
+    
   }
 });
