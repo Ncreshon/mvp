@@ -1,5 +1,5 @@
 angular.module("mvpApp").component("reciepes", {
-  templateUrl: "./templates/reciepe.html",
+  templateUrl: "./templates/reciepes.html",
   bindings: {
     
   }
