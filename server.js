@@ -2,14 +2,20 @@ const http = require('http');
 
 const express = require('express');
 
+const path = require('path');
+
+const db = require('./db.js');
+
 const app = express();
 
-const Port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 http.createServer();
 
-app.get('/', (req, res) => res.send('yep this server is working dude'));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
-app.listen(Port);
+app.get('/signup', (req, res) => res.send('this works too'));
 
-console.log(`server is listening to ${Port}`);
+app.listen(PORT);
+
+console.log(`server is listening to ${PORT}`);
