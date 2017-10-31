@@ -14,7 +14,17 @@ const userSchema = mongoose.Schema({
   username: String,
   password: String,
   firstName: String,
-  lastName: String,
 });
 
 const User = mongoose.model('User', userSchema);
+
+const Nik = new User({ username: 'Nik', password: 'stuff', firstName: 'Nicole' });
+
+Nik.save((err, Nik) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('success');
+  }
+});
+
