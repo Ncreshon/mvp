@@ -13,8 +13,8 @@ db.once('open', () => console.log('connection successful'));
 const userSchema = mongoose.Schema({
   username: String,
   password: String,
-  reminderQuestion: String,
-  reminderAnswer: String,
+  firstName: String,
+  lastName: String,
 });
 
 const User = mongoose.model('User', userSchema);

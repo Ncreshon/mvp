@@ -14,7 +14,7 @@ http.createServer();
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
-app.get('/signup', (req, res) => res.send('this works too'));
+app.get('/signup', (req, res) => res.sendFile(path.join(__dirname, 'signup.html')));
 
 app.listen(Port);
 
