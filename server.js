@@ -12,7 +12,7 @@ const Port = process.env.PORT || 3000;
 
 http.createServer();
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'main.htmml')));
 
 app.get('/signup', (req, res) => res.sendFile(path.join(__dirname, 'signup.html')));
 
