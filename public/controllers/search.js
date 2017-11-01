@@ -1,25 +1,31 @@
 const mvpApp = angular.module('mvpApp');
 
 mvpApp.factory('Search', ($http) => {
-  const service = {};
-  return service;
+  
+  return  {
+    getFood: (food) => {
+      return $http({
+        method: "GET",
+        url: "http://localhost:3000/search",
+        headers: { search: food }
+      }).then(({ data: {recipes}}) => recipes);
+      
+  
+  }, 
+}
+  
 });
 
-mvpApp.controller('searchCtrl', ['$http', '$scope', 'Search', function ($http, $scope, Search) {
+mvpApp.controller('searchCtrl', function ($http, $scope, Search) {
   $scope.text = 'nachos';
+  $scope.recipes = [];
   $scope.submit = function () {
-    $http({
-      method: 'GET',
-      url: 'http://localhost:3000/search',
-      headers: { search: this.text },
-
-    }).then(function successCallback({ data }) {
-      Search.reciepes = data.recipes;
-      console.log(Search.reciepes);
-    }, function errorCallback(error) {
-      console.error(error);
-    });
+    Search.getFood($scope.text).then((recipes) => {
+      $scope.recipes = recipes
+      console.log($scope.recipes)
+    })
+    
   };
 
-}]);
+});
 
