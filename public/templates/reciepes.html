@@ -2,8 +2,11 @@
 
   <div class="media-body">
     <h4 class="media-heading">
-     {{2 * 2}}
+      Recipes
     </h4>
-    <reciepe reciepes='reciepes'></reciepe>
+    <div ng-repeat='recipe in $ctrl.recipes'>
+      <pre>{{recipe | json}}</pre>
+      <reciepe recipe='recipe'></reciepe>
+    </div>
   </div>
 </div>
