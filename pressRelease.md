@@ -15,6 +15,7 @@
  
 ## Solution ## 
 > Search recipes made with your favorite ingredients. Learn new and interesting recipes for your favorite ingredients. 
+Favorite them so you don't forget. Then marked them tried once you have made them.
  
  
 ## From Keys to the Heart ## 
@@ -22,7 +23,7 @@
  
  
 ## How to Get Started ## 
-> Getting started is as simple as 1,2,3. 1. Sign Up for Access 2. Search an ingredient 3. Pick a recipe and enjoy 
+> Getting started is as simple as 1,2,3. 1. Log on 2. Search an ingredient 3. Pick a recipe and enjoy 
  
  
 ## Customer Quote ## 
