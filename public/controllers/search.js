@@ -1,12 +1,21 @@
-// const http = require('http');
+angular.module('mvpApp').controller('searchCtrl', ['$http', '$scope', function ($http, $scope) {
+  $scope.text = 'nachos';
+  $scope.submit = function () {
+    console.log(this.text)
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/search',
+      headers:  { search: this.text },
+      params:  { search: this.text },
 
-// const keys = require('../config.js')
+    }).then((response) => {
+      console.log(response + 'hey')
+    }, (response) => {
+      console.log(response)
+    });
+  };
 
-const url = 'http://food2fork.com/api/search';
 
-angular.module("mvpApp",).controller("searchCtrl", ['$scope', function($scope) {
-   $scope.text = ''
-   $scope.submit = function(){
-  }
+  
 }]);
 

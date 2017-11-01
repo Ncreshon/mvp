@@ -10,21 +10,23 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => console.log('connection successful'));
 
-const userSchema = mongoose.Schema({
-  username: String,
-  password: String,
-  firstName: String,
+const reciepeSchema = mongoose.Schema({
+  title: String,
+  picture: String,
+  url: String,
+  favorite: String,
+  tried: String,
 });
 
-const User = mongoose.model('User', userSchema);
+const Reciepe = mongoose.model('Reciepe', reciepeSchema);
 
-const Nik = new User({ username: 'Nik', password: 'stuff', firstName: 'Nicole' });
+// const Nik = new User({ username: 'Nik', password: 'stuff', firstName: 'Nicole' });
 
-Nik.save((err, Nik) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('success');
-  }
-});
+// Nik.save((err, Nik) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log('success');
+//   }
+// });
 
