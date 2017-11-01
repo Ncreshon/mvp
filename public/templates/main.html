@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div ng-controller="searchCtrl" class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <form  ng-submit="submit()" ng-controller="searchCtrl" role="form">
+      <form  ng-submit="submit()"  role="form">
         <div class="form-group">
 
           <label for="search">
@@ -15,13 +15,7 @@
           Submit
         </button>
       </form>
-      <!-- <form ng-submit="submit()" ng-controller="searchCtrl">
-        Seperate ingredents with comma
-        <input style="width:400px;" type="text" ng-model="text" name="text" />
-        <input type="submit" id="submit" value="Submit" />
-      
-      </form> -->
-      <reciepes></reciepes>
+      <reciepes reciepes='Search.reciepes'></reciepes>
     </div>
   </div>
 </div>

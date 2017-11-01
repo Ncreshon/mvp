@@ -1,6 +1,6 @@
-angular.module("mvpApp").component("reciepes", {
-  templateUrl: "./templates/reciepes.html",
+angular.module('mvpApp').component('reciepes', {
+  templateUrl: './templates/reciepes.html',
   bindings: {
-    
-  }
+    reciepes: '<',
+  },
 });

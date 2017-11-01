@@ -3,6 +3,7 @@ angular.module('mvpApp', [])
     this.stuff = {
       name: 'stuff'
     }
+    
 
 
   });
