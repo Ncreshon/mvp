@@ -32,6 +32,7 @@ app.get('/search', (request, response) => {
       body += data;
     });
     res.on('end', () => {
+      console.log(body)
       response.send(body);
     });
   });

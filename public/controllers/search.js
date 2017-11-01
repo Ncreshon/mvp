@@ -1,5 +1,6 @@
 angular.module('mvpApp').controller('searchCtrl', ['$http', '$scope', function ($http, $scope) {
   $scope.text = 'nachos';
+  $scope.reciepes = '';
   $scope.submit = function () {
     console.log(this.text)
     $http({
@@ -8,14 +9,12 @@ angular.module('mvpApp').controller('searchCtrl', ['$http', '$scope', function (
       headers:  { search: this.text },
       params:  { search: this.text },
 
-    }).then((response) => {
-      console.log(response + 'hey')
-    }, (response) => {
-      console.log(response)
+    }).then(function successCallback(reciepes) {
+      $scope.reciepes = reciepes.data.recipes;
+    }, function errorCallback(reciepes) {
+      console.error(reciepes);
     });
   };
 
-
-  
 }]);
 
