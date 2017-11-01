@@ -1,12 +1,12 @@
 <div class="media">
-  <a href="#" class="pull-left">
-    <img alt="Bootstrap Media Another Preview" src="http://lorempixel.com/64/64/" class="media-object" />
+  <a href={{$ctrl.recipe.f2f_url}} class="pull-left" target="_blank">
+    <img  ng-src={{$ctrl.recipe.image_url}} class="media-object" />
   </a>
   <div class="media-body">
     <h4 class="media-heading">
-      reciepe name
+      {{$ctrl.recipe.title}}
     </h4>
-    food
+
     <!-- <button type="submit" id="submit" value="Submit" class="btn btn-default">
      favorite
     </button>
