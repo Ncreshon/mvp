@@ -7,6 +7,7 @@ angular.module('mvpApp')
     recipes:'<',
     favorite:'<',
     triedit: '<',
+    nolike: '<',
   }
 });
 

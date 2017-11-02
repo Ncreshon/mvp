@@ -12,6 +12,7 @@ angular.module('mvpApp').component('recipe', {
     recipe: '<',
     favorite: '<',
     triedit: '<',
+    nolike: '<'
   },
 
   // controller: 

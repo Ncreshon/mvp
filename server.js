@@ -54,10 +54,8 @@ response.end()
 
 app.post("/dbtriedit", (request, response) => {
    const data = JSON.parse(request.query.data);
-  
-  db.update(data.f2f_url, () => {
-    console.log('here')
-  }),
+  console.log('sup')
+  db.update(data.f2f_url)
   response.end()
 
 });
@@ -75,17 +73,10 @@ app.get("/dblistTried", (request, response) => {
   })
 });
 
-  app.get("/dbdelete", (request, response) => {
-  const data = request.query.data;
-  db.deleteIt(data,function(err, tried){
-    if (err) {
-      console.error(err)
-    } else {
-      console.log(tried)
-
-      
-    }
-  });
+  app.post("/dbdelete", (request, response) => {
+    
+  const data = JSON.parse(request.query.data);
+db.deleteIt(data);
   
 });
 

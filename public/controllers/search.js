@@ -31,7 +31,7 @@ mvpApp.controller('searchCtrl', function ($http, $scope, Search) {
     })
   };
   $scope.triedit = (recipe) => {
-    console.log('yep')
+    console.log(recipe)
     $http({
       method: "POST",
       url: "http://localhost:4500/dbtriedit",
@@ -42,10 +42,17 @@ mvpApp.controller('searchCtrl', function ($http, $scope, Search) {
   $scope.submit = function () {
     Search.getFood($scope.text).then((recipes) => {
       $scope.recipes = recipes
-      console.log($scope.recipes)
     })
     
   };
+    $scope.nolike = recipe => {
+      console.log('ll')
+      $http({
+        method: "POST",
+        url: "http://localhost:4500/dbdelete",
+        params: {data: recipe}
+      });
+    };
 
 });
 

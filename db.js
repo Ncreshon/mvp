@@ -34,7 +34,7 @@ module.exports ={
  },
  
  update: function(data){
-   console.log(data)
+   console.log('hey')
   Reciepe.findOneAndUpdate({url: data.url},{tried: true}) 
 
 },
@@ -46,8 +46,11 @@ isFavorite: function(data, callback) {
 return Reciepe.find({url: data}).where({favorite: true});
 
 },
-deleteIt: function(data, callback) {
-return Reciepe.remove({url: data}, callback );
+deleteIt: function(data) {
+  console.log(data.f2f_url)
+   Reciepe.remove({url: data.f2f_url}, (err) => {
+  
+});
 
 },
 
@@ -56,13 +59,5 @@ return Reciepe.remove({url: data}, callback );
 
 }
 
-// const Nik = new User({ username: 'Nik', password: 'stuff', firstName: 'Nicole' });
 
-// Nik.save((err, Nik) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log('success');
-//   }
-// });
 
