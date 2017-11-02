@@ -34,15 +34,8 @@ module.exports ={
  },
  
  update: function(data){
-  Reciepe.findOne({url: JSON.parse(data).f2f_url}, function(err, doc){
-    if (err){
-      console.error(err);
-    } else {
-      console.log(doc);
-      doc.tried = true;
-      doc.save();
-    }
-  }) 
+   console.log(data)
+  Reciepe.findOneAndUpdate({url: data.url},{tried: true}) 
 
 },
 listTried: function(callback) {

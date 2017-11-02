@@ -40,27 +40,26 @@ app.post('/dbfavorite', (request, response) => {
  
   const data = JSON.parse(request.query.data)
 
- let fav = { 
-   title: data.title,
-   picture: data.image_url, 
-   url: data.f2f_url,
-   favorite: true,
-   tried: false,
-   
- };
- 
- console.log(fav);
-//  console.log(fav)
- db.save(fav)
-
-
-
- response.end()
+let fav = { 
+  title: data.title,
+  picture: data.image_url, 
+  url: data.f2f_url,
+  favorite: true,
+  tried: false,
+  
+};
+db.save(fav)
+response.end()
 });
+
 app.post("/dbtriedit", (request, response) => {
-  const data = request.query.data;
-  db.update(data)
-  response.end();
+   const data = JSON.parse(request.query.data);
+  
+  db.update(data.f2f_url, () => {
+    console.log('here')
+  }),
+  response.end()
+
 });
 
 app.get("/dblistTried", (request, response) => {
