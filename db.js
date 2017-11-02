@@ -33,11 +33,22 @@ module.exports ={
     })
  },
  
- update: function(data){
-   console.log('hey')
-  Reciepe.findOneAndUpdate({url: data.url},{tried: true}) 
 
+   
+  update: function(data) {
+  Reciepe.findOne({url: data}, function(err, doc){
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('success')
+      doc.tried = true;
+      doc.save();
+    }
+  }) 
 },
+
+
+
 listTried: function(callback) {
 return Reciepe.find({tried: true}, callback );
 
@@ -47,7 +58,7 @@ return Reciepe.find({url: data}).where({favorite: true});
 
 },
 deleteIt: function(data) {
-  console.log(data.f2f_url)
+  
    Reciepe.remove({url: data.f2f_url}, (err) => {
   
 });
