@@ -6,7 +6,7 @@ mvpApp.factory('Search', ($http) => {
     getFood: (food) => {
       return $http({
         method: "GET",
-        url: "http://localhost:5000/search",
+        url: "http://localhost:4500/search",
         headers: { search: food }
       }).then(({ data: {recipes}}) => recipes);
       
@@ -25,7 +25,7 @@ mvpApp.controller('searchCtrl', function ($http, $scope, Search) {
     console.log('hey')
     $http({
       method: 'POST',
-      url: "http://localhost:5000/dbfavorite",
+      url: "http://localhost:4500/dbfavorite",
       params: { data: recipe}
 
     })
@@ -34,7 +34,7 @@ mvpApp.controller('searchCtrl', function ($http, $scope, Search) {
     console.log('yep')
     $http({
       method: "POST",
-      url: "http://localhost:5000/dbtriedit",
+      url: "http://localhost:4500/dbtriedit",
       params: { data: recipe }
     });
   }

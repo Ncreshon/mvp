@@ -12,7 +12,7 @@ const app = express();
 
 const key = require('./config.js');
 
-const Port = process.env.PORT || 3000;
+const Port = process.env.PORT || 4500;
 
 const url = 'http://food2fork.com/api/search';
 
@@ -37,16 +37,20 @@ app.get('/search', (request, response) => {
   });
 });
 app.post('/dbfavorite', (request, response) => {
-  const data = request.query.data
- console.log(db);
+ 
+  const data = JSON.parse(request.query.data)
+
  let fav = { 
    title: data.title,
    picture: data.image_url, 
    url: data.f2f_url,
-   favorite: false,
+   favorite: true,
    tried: false,
    
  };
+ 
+ console.log(fav);
+//  console.log(fav)
  db.save(fav)
 
 
@@ -54,9 +58,39 @@ app.post('/dbfavorite', (request, response) => {
  response.end()
 });
 app.post("/dbtriedit", (request, response) => {
-  console.log(request.query);
+  const data = request.query.data;
+  db.update(data)
   response.end();
 });
+
+app.get("/dblistTried", (request, response) => {
+  const data = request.query.data;
+  db.listTried(function(err, tried){
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(tried)
+
+      response.send(tried)
+    }
+  })
+});
+
+  app.get("/dbdelete", (request, response) => {
+  const data = request.query.data;
+  db.deleteIt(data,function(err, tried){
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(tried)
+
+      
+    }
+  });
+  
+});
+
+
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(Port);

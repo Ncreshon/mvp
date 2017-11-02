@@ -33,6 +33,32 @@ module.exports ={
     })
  },
  
+ update: function(data){
+  Reciepe.findOne({url: JSON.parse(data).f2f_url}, function(err, doc){
+    if (err){
+      console.error(err);
+    } else {
+      console.log(doc);
+      doc.tried = true;
+      doc.save();
+    }
+  }) 
+
+},
+listTried: function(callback) {
+return Reciepe.find({tried: true}, callback );
+
+},
+isFavorite: function(data, callback) {
+return Reciepe.find({url: data}).where({favorite: true});
+
+},
+deleteIt: function(data, callback) {
+return Reciepe.remove({url: data}, callback );
+
+},
+
+
 
 
 }
