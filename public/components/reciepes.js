@@ -5,6 +5,8 @@ angular.module('mvpApp')
   templateUrl: './templates/reciepes.html',
   bindings: {
     recipes:'<',
+    favorite:'<',
+    triedit: '<',
   }
 });
 

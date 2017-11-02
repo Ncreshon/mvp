@@ -10,13 +10,16 @@
           <input type="text" ng-model='text' name='text' class="form-control" id="search" />
         </div>
         <div ng-submit="" class="form-group">
+        
 
         <button type="submit" id="submit"  value ="Submit"class="btn btn-default">
           Submit
+          
         </button>
       </form>
       
-      <reciepes-list recipes='recipes'></reciepes-list>
+      <reciepes-list recipes='recipes' favorite='favorite' triedit='triedit'></reciepes-list>
+      
     </div>
   </div>
 </div>

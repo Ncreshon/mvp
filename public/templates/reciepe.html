@@ -1,18 +1,15 @@
 <div class="media">
   <a href={{$ctrl.recipe.f2f_url}} class="pull-left" target="_blank">
-    <img  ng-src={{$ctrl.recipe.image_url}} class="media-object" />
+    <img  ng-src={{$ctrl.recipe.image_url}} class="media-object" height="100" width="100" />
   </a>
   <div class="media-body">
     <h4 class="media-heading">
       {{$ctrl.recipe.title}}
+      
     </h4>
 
-    <!-- <button type="submit" id="submit" value="Submit" class="btn btn-default">
-     favorite
-    </button>
-    <button type="submit" id="submit" value="Submit" class="btn btn-default">
-      tried it
-    </button> -->
+  <button type="button"  ng-click='$ctrl.favorite()' class="btn btn-success">Favorite</button>
+  <button type="button" ng-click='$ctrl.triedit()' class="btn btn-info">Tried It</button>
 
   </div>
 </div>
