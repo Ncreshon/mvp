@@ -6,7 +6,7 @@ mvpApp.factory('Search', ($http) => {
     getFood: (food) => {
       return $http({
         method: "GET",
-        url: "http://localhost:3000/search",
+        url: "http://localhost:5000/search",
         headers: { search: food }
       }).then(({ data: {recipes}}) => recipes);
       
@@ -21,11 +21,22 @@ mvpApp.factory('Search', ($http) => {
 mvpApp.controller('searchCtrl', function ($http, $scope, Search) {
   $scope.text = 'nachos';
   $scope.hey = 'hey you';
-  $scope.favorite = ()=> {
+  $scope.favorite = (recipe)=> {
     console.log('hey')
+    $http({
+      method: 'POST',
+      url: "http://localhost:5000/dbfavorite",
+      params: { data: recipe}
+
+    })
   };
-  $scope.triedit = () => {
+  $scope.triedit = (recipe) => {
     console.log('yep')
+    $http({
+      method: "POST",
+      url: "http://localhost:5000/dbtriedit",
+      params: { data: recipe }
+    });
   }
   $scope.recipes = [{"publisher":"The Pioneer Woman","f2f_url":"http://food2fork.com/view/fbc599","title":"Loaded Nachos","source_url":"http://thepioneerwoman.com/cooking/2013/05/loaded-nachos/","recipe_id":"fbc599","image_url":"http://static.food2fork.com/nachos294e.jpg","social_rank":99.99999957866746,"publisher_url":"http://thepioneerwoman.com"}];
   $scope.submit = function () {

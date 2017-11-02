@@ -36,6 +36,27 @@ app.get('/search', (request, response) => {
     });
   });
 });
+app.post('/dbfavorite', (request, response) => {
+  const data = request.query.data
+ console.log(db);
+ let fav = { 
+   title: data.title,
+   picture: data.image_url, 
+   url: data.f2f_url,
+   favorite: false,
+   tried: false,
+   
+ };
+ db.save(fav)
+
+
+
+ response.end()
+});
+app.post("/dbtriedit", (request, response) => {
+  console.log(request.query);
+  response.end();
+});
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(Port);
